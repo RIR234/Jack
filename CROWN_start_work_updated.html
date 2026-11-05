@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CROWN — Member Portal</title>
+<style>
+:root{--bg:#090b10;--panel:#121722;--panel2:#171f2c;--line:#283244;--gold:#d8b36a;--gold2:#f1d89e;--muted:#9aa6b7;--white:#f5f7fb;--green:#5ac99a;--red:#f07878}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 80% -10%,#292218 0,transparent 32%),var(--bg);color:var(--white);font:15px/1.5 Inter,system-ui,-apple-system,Segoe UI,sans-serif}
+button,input,select{font:inherit}button{cursor:pointer}.shell{max-width:1200px;margin:auto;padding:22px}.top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 0 24px}.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.04em}.crown{width:42px;height:42px;border:1px solid #80663a;border-radius:13px;display:grid;place-items:center;color:var(--gold);font-size:22px;background:linear-gradient(145deg,#2a2419,#121722)}.brand small{display:block;color:var(--muted);font-size:11px;letter-spacing:.16em;font-weight:600}.top-actions{display:flex;gap:9px;align-items:center}.btn{border:1px solid var(--line);background:#1b2432;color:var(--white);border-radius:11px;padding:10px 15px;font-weight:650}.btn.gold{background:linear-gradient(135deg,#e8ca8a,#b88d48);color:#16120b;border:0}.btn.ghost{background:transparent}.btn:disabled{opacity:.45;cursor:not-allowed}.layout{display:grid;grid-template-columns:235px 1fr;gap:20px}.sidebar,.card{background:rgba(18,23,34,.94);border:1px solid var(--line);border-radius:18px}.sidebar{padding:15px;height:max-content;position:sticky;top:15px}.nav{display:grid;gap:6px}.nav button{background:transparent;border:0;color:#aeb8c7;text-align:left;padding:12px;border-radius:10px}.nav button.active,.nav button:hover{background:#262b32;color:var(--gold2)}.nav .section{color:#647184;text-transform:uppercase;font-size:10px;letter-spacing:.16em;padding:14px 12px 4px}.main{min-width:0}.welcome{display:flex;justify-content:space-between;align-items:flex-end;gap:15px;margin:4px 0 20px}.eyebrow{color:var(--gold);text-transform:uppercase;letter-spacing:.16em;font-size:11px;font-weight:800}.welcome h1{font-size:clamp(25px,4vw,36px);line-height:1.1;margin:6px 0}.muted{color:var(--muted)}.grid{display:grid;gap:14px}.stats{grid-template-columns:repeat(3,minmax(0,1fr));margin-bottom:16px}.stat{padding:18px}.stat .label{color:var(--muted);font-size:12px}.stat strong{display:block;font-size:26px;margin:8px 0 3px}.stat .hint{font-size:11px;color:#758398}.gold-text{color:var(--gold2)}.two{grid-template-columns:1.25fr .75fr}.card{padding:18px;margin-bottom:15px}.card h2{font-size:17px;margin:0 0 14px}.card-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:13px}.pill{display:inline-flex;padding:5px 9px;border-radius:99px;background:#2b281f;color:var(--gold2);font-size:11px;font-weight:700}.actions{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.action{background:var(--panel2);border:1px solid var(--line);border-radius:13px;padding:14px 10px;color:var(--white);text-align:left}.action b{display:block;font-size:20px;color:var(--gold);margin-bottom:7px}.action span{font-size:12px}.progress{height:8px;background:#273142;border-radius:99px;overflow:hidden;margin:12px 0}.progress i{display:block;height:100%;width:20%;background:linear-gradient(90deg,#b58a46,#f1d89e);border-radius:99px}.levels{display:grid;grid-template-columns:repeat(5,1fr);gap:7px}.level{border:1px solid var(--line);background:#151d29;border-radius:11px;padding:11px 5px;text-align:center;font-size:11px;color:var(--muted)}.level.current{border-color:#b58a46;color:var(--gold2);background:#29251d}.level b{display:block;font-size:14px;margin-bottom:3px}.table-wrap{overflow:auto}table{width:100%;border-collapse:collapse;min-width:460px}th,td{text-align:left;padding:12px 9px;border-bottom:1px solid var(--line);font-size:12px}th{color:var(--muted);font-weight:600}.status{color:var(--green)}.empty{padding:22px;text-align:center;color:var(--muted);font-size:13px}.package-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.package{border:1px solid var(--line);border-radius:15px;padding:17px;background:linear-gradient(160deg,#1b2431,#111722)}.package.featured{border-color:#987642}.package h3{margin:8px 0}.price{font-size:25px;font-weight:800;color:var(--gold2)}.package ul{padding-left:18px;color:var(--muted);font-size:12px;min-height:86px}.field{display:grid;gap:6px;margin-bottom:13px}.field label{font-size:12px;color:var(--muted)}.field input,.field select{width:100%;padding:12px;border:1px solid var(--line);background:#0d121b;color:var(--white);border-radius:10px;outline:none}.field input:focus,.field select:focus{border-color:var(--gold)}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}.notice{border:1px solid #65502f;background:#282318;color:#e8d3a8;padding:12px;border-radius:11px;font-size:12px;margin-bottom:15px}.page{display:none}.page.active{display:block}.auth{max-width:450px;margin:7vh auto;padding:28px}.auth h1{margin:5px 0 8px}.auth .brand{margin-bottom:25px}.toast{position:fixed;right:20px;bottom:20px;background:#202b38;border:1px solid var(--line);padding:13px 17px;border-radius:12px;display:none;z-index:10}.footer{color:#667386;font-size:11px;text-align:center;padding:20px}.small{font-size:11px}.hidden{display:none!important}
+@media(max-width:850px){.layout{grid-template-columns:1fr}.sidebar{position:static}.nav{grid-template-columns:repeat(3,1fr)}.nav .section{grid-column:1/-1}.stats{grid-template-columns:1fr 1fr}.two{grid-template-columns:1fr}}
+@media(max-width:560px){.shell{padding:13px}.top{align-items:flex-start}.top-actions .btn{padding:8px 10px;font-size:12px}.stats{grid-template-columns:1fr 1fr}.stat{padding:13px}.stat strong{font-size:21px}.actions{grid-template-columns:1fr 1fr}.package-grid{grid-template-columns:1fr}.welcome{display:block}.form-row{grid-template-columns:1fr}.nav{grid-template-columns:1fr 1fr}.levels{gap:4px}.level{padding:8px 2px;font-size:9px}}
+
+/* CROWN mobile dashboard refresh */
+:root{--bg:#050505;--panel:#111;--panel2:#191919;--line:#303030;--gold:#d8b36a;--gold2:#f4d99e;--muted:#a7a7a7;--white:#f8f8f8}
+body{background:#050505;color:#fff}
+.shell{max-width:1100px;padding:16px 18px 100px}
+.top{padding:10px 0 18px;border-bottom:1px solid #252525;margin-bottom:18px}
+.brand{font-size:23px;letter-spacing:.08em}.crown{border-radius:50%;width:46px;height:46px;font-size:25px;background:#15120d}
+.layout{grid-template-columns:205px 1fr;gap:16px}
+.sidebar,.card{background:#101010;border-color:#292929;border-radius:16px}
+.sidebar{padding:12px}.nav button{color:#c9c9c9}.nav button.active,.nav button:hover{background:#292319;color:var(--gold2)}
+.welcome{margin:0 0 16px}.welcome h1{font-size:clamp(24px,4vw,34px)}
+.hero-panel{background:#000;border:1px solid #222;border-radius:0;padding:28px 22px 25px;margin-bottom:0;text-align:center}
+.hero-emblem{width:94px;height:94px;border-radius:26px;margin:0 auto 16px;display:grid;place-items:center;font-size:54px;color:#f0d59a;background:linear-gradient(145deg,#725633,#d7b77e 55%,#5b4227);box-shadow:inset 0 0 0 7px #b18b58}
+.hero-panel h1{font-size:clamp(25px,5vw,38px);margin:0 0 22px}.hero-panel h1 span{color:#fff;font-weight:800}
+.identity-strip{display:grid;grid-template-columns:repeat(3,1fr);background:#fff;color:#111;border-radius:15px;overflow:hidden;margin:0 auto 22px;max-width:850px}
+.identity-strip>div{padding:14px 8px;border-right:1px solid #ddd}.identity-strip>div:last-child{border:0}.identity-strip small{display:block;color:#777;font-weight:700;font-size:13px}.identity-strip strong{display:block;font-size:19px;overflow-wrap:anywhere}
+.hero-balance{font-size:22px}.hero-balance strong{font-size:30px}
+.metric-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;background:#fff;color:#111;border:1px solid #ddd;margin:0 0 18px}
+.metric{padding:24px 10px;text-align:center;border:1px solid #ddd;min-width:0}.metric span{display:block;color:#999;font-size:17px}.metric strong{font-size:24px}.metric small{font-size:13px;color:#777}
+.dashboard-links{display:grid;gap:12px;margin:18px 0}.dashboard-link{display:flex;align-items:center;justify-content:space-between;width:100%;padding:18px 20px;border:1px solid #303030;border-radius:15px;background:#101010;color:#fff;text-align:left;font-size:18px}.dashboard-link i{font-style:normal;color:#b8b8b8;font-size:26px}
+.mobile-dock{display:none}
+@media(max-width:850px){.layout{grid-template-columns:1fr}.sidebar{display:none}.shell{padding:12px 0 115px}.top{padding:8px 17px 15px;margin:0 0 0}.top-actions{padding-right:3px}.top-actions .small{display:none}.main{width:100%}.hero-panel{border-radius:0}.welcome:not(.hero-panel .welcome){padding:0 16px}.card{margin-left:13px;margin-right:13px}.mobile-dock{position:fixed;z-index:20;bottom:0;left:0;right:0;display:grid;grid-template-columns:repeat(4,1fr);gap:2px;padding:10px 5px calc(10px + env(safe-area-inset-bottom));background:rgba(10,10,10,.97);border-top:1px solid #333;box-shadow:0 -8px 25px #0008}.mobile-dock button{border:0;background:transparent;color:#ddd;padding:4px 2px;font-size:11px;font-weight:750}.mobile-dock b{display:block;font-size:24px;color:var(--gold2);line-height:1.2;margin-bottom:4px}.stats{padding:0 12px}.actions{padding:0 12px}.two{padding:0 12px}.dashboard-links{padding:0 13px}}
+@media(max-width:480px){.brand{font-size:19px}.brand small{font-size:9px}.hero-panel{padding:23px 13px}.hero-emblem{width:82px;height:82px;font-size:46px}.identity-strip small{font-size:11px}.identity-strip strong{font-size:16px}.hero-balance{font-size:18px}.hero-balance strong{font-size:25px}.metric{padding:20px 6px}.metric span{font-size:15px}.metric strong{font-size:21px}.dashboard-link{font-size:16px;padding:17px}.stats{grid-template-columns:1fr 1fr}.stat strong{font-size:19px}}
+
+
+/* Start Work screen inspired by the user's latest reference */
+.work-balance{background:#000;color:#fff;text-align:center;padding:18px 12px 24px;font-size:22px}
+.work-balance-label{display:none}
+.work-balance strong{font-size:30px}
+.work-metrics{display:grid;grid-template-columns:1fr 1fr;background:#fff;color:#111;border:1px solid #ddd;margin-bottom:22px}
+.work-metrics>div{padding:23px 8px;text-align:center;border:1px solid #ddd}
+.work-metrics span{display:block;color:#999;font-size:19px}
+.work-metrics strong{display:block;font-size:27px}
+.work-level{margin:0 13px 30px;background:#000;color:#fff;border-radius:19px;min-height:320px;padding:34px 20px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.work-emblem{width:150px;height:150px;border-radius:30px;background:linear-gradient(145deg,#d5ae73,#f0d7a2 55%,#a77b4d);color:#75583c;display:grid;place-items:center;font-size:100px;position:relative;margin-bottom:24px;clip-path:polygon(50% 0,100% 27%,100% 73%,50% 100%,0 73%,0 27%)}
+.work-emblem i{position:absolute;right:15px;top:28px;color:white;font-size:35px;font-style:normal}
+.work-level-title{font-size:29px;color:#aaa;font-weight:300}
+.work-level-title strong{color:#fff;font-weight:800}
+.work-level p{font-size:18px;line-height:1.55;color:#aaa;margin:30px 0 0}
+.start-work-button{width:calc(100% - 26px);margin:0 13px 10px;border:0;border-radius:100px;min-height:145px;background:linear-gradient(110deg,#050505,#282828);color:#fff;display:flex;align-items:center;justify-content:space-around;box-shadow:0 12px 24px #0003;font-size:clamp(48px,10vw,82px);font-weight:300}
+.building-icon{font-size:55px;font-weight:700}.coins-icon{font-size:52px}
+.work-note{text-align:center;color:#999;font-size:11px;padding:8px 15px 18px}
+@media(max-width:480px){.work-balance{font-size:19px}.work-balance strong{font-size:27px}.work-metrics span{font-size:16px}.work-metrics strong{font-size:24px}.work-level{min-height:320px;padding:30px 14px}.work-emblem{width:145px;height:145px}.work-level-title{font-size:26px}.work-level p{font-size:16px}.start-work-button{min-height:125px}.building-icon,.coins-icon{font-size:43px}}
+</style>
+</head>
+<body>
+<div id="authView" class="shell">
+  <div class="auth card">
+    <div class="brand"><div class="crown">♛</div><div>CROWN<small>MEMBER PORTAL</small></div></div>
+    <div class="eyebrow">Welcome</div><h1 id="authTitle">Sign in to your account</h1><p class="muted" id="authSub">Access your membership dashboard.</p>
+    <div id="nameField" class="field hidden"><label>Full name</label><input id="fullName" placeholder="Your full name"></div>
+    <div class="field"><label>Email address</label><input id="email" type="email" placeholder="you@example.com"></div>
+    <div class="field"><label>Password</label><input id="password" type="password" placeholder="At least 8 characters"></div>
+    <button class="btn gold" style="width:100%" id="authSubmit" onclick="authenticate()">Sign In</button>
+    <p class="muted small" style="text-align:center;margin-top:17px"><span id="switchText">New to CROWN?</span> <a href="#" id="switchAuth" style="color:var(--gold2)" onclick="toggleAuth(event)">Create account</a></p>
+    <div class="notice">Prototype mode: this screen demonstrates the interface only. Real accounts require a secure server and database.</div>
+  </div>
+</div>
+<div id="appView" class="shell hidden">
+<header class="top">
+  <div class="brand"><div class="crown">♛</div><div>CROWN<small>MEMBERSHIP PLATFORM</small></div></div>
+  <div class="top-actions"><span class="muted small" id="userLabel">Member</span><button class="btn ghost" onclick="logout()">Log out</button></div>
+</header>
+<div class="layout">
+<aside class="sidebar">
+  <div class="nav">
+    <div class="section">Workspace</div>
+    <button class="active" data-page="dashboard" onclick="showPage('dashboard',this)">⌂ &nbsp; Overview</button>
+    <button data-page="startwork" onclick="showPage('startwork',this)">▣ &nbsp; Start Work</button>
+    <button data-page="wallet" onclick="showPage('wallet',this)">◈ &nbsp; My Wallet</button>
+    <button data-page="packages" onclick="showPage('packages',this)">▣ &nbsp; Packages</button>
+    <button data-page="levels" onclick="showPage('levels',this)">♛ &nbsp; Membership Levels</button>
+    <div class="section">Account</div>
+    <button data-page="transactions" onclick="showPage('transactions',this)">↔ &nbsp; Transactions</button>
+    <button data-page="profile" onclick="showPage('profile',this)">◎ &nbsp; My Profile</button>
+  </div>
+  <p class="muted small" style="padding:12px 8px 0">CROWN<br>Secure member area</p>
+</aside>
+<main class="main">
+<section class="page active" id="page-dashboard">
+  <div class="hero-panel">
+    <div class="hero-emblem">♛</div>
+    <h1>Hello, <span id="welcomeName">Member</span>!</h1>
+    <div class="identity-strip">
+      <div><small>Level</small><strong id="heroLevel">FREE</strong></div>
+      <div><small>Account</small><strong id="heroAccount">Member</strong></div>
+      <div><small>User ID</small><strong id="heroUserId">—</strong></div>
+    </div>
+    <div class="hero-balance">Balance: <strong id="cashBalance">৳0.00</strong></div>
+  </div>
+  <div class="metric-grid">
+    <div class="metric"><span>Revenue</span><strong id="revenueValue">৳0.00</strong></div>
+    <div class="metric"><span>Promotion Completed</span><strong id="promotionValue">0</strong></div>
+    <div class="metric"><span>Security Deposit</span><strong id="securityValue">৳0.00</strong><small>Demo only</small></div>
+    <div class="metric"><span>On Hold</span><strong id="holdValue">৳0.00</strong></div>
+  </div>
+  <div class="dashboard-links">
+    <button class="dashboard-link" onclick="showPage('wallet')">Deposit Balance <i>›</i></button>
+    <button class="dashboard-link" onclick="showPage('wallet')">Withdraw Balance <i>›</i></button>
+  </div>
+  <div class="grid stats">
+    <div class="card stat"><div class="label">Points wallet</div><strong id="pointsBalance">0 PTS</strong><div class="hint">Non-cash reward points</div></div>
+    <div class="card stat"><div class="label">Membership progress</div><strong class="gold-text" id="currentLevel">Level 1</strong><div class="hint">Five membership levels</div></div>
+  </div>
+  <div class="grid two">
+    <div class="card"><div class="card-head"><h2>Membership progress</h2><span class="pill" id="levelPill">Level 1 / 5</span></div><div class="progress"><i id="levelProgress"></i></div><div class="muted small" id="levelHint">Next membership tier.</div><div class="levels" id="miniLevels"></div></div>
+    <div class="card"><div class="card-head"><h2>Recent activity</h2><button class="btn ghost small" onclick="showPage('transactions')">View all</button></div><div id="recentActivity" class="muted small">No activity yet.</div></div>
+  </div>
+</section>
+<section class="page" id="page-startwork">
+  <div class="work-balance"><div class="work-balance-label">Balance</div><strong id="workBalance">৳0.00</strong></div>
+  <div class="work-metrics">
+    <div><span>Revenue</span><strong id="workRevenue">৳0.00</strong></div>
+    <div><span>Promotion Remains</span><strong id="promotionRemaining">83</strong></div>
+  </div>
+  <div class="work-level">
+    <div class="work-emblem">⬡<i>✦</i></div>
+    <div class="work-level-title">Your Level: <strong id="workLevel">FREE</strong></div>
+    <p>Access basic features. Ideal for new users<br class="desktop-only"> to explore the platform.</p>
+  </div>
+  <button class="start-work-button" onclick="startWorkDemo()">
+    <span class="building-icon">▥</span><span>Start</span><span class="coins-icon">🪙</span>
+  </button>
+  <div class="work-note">Demo preview — no paid task or earnings are activated.</div>
+</section>
+<section class="page" id="page-wallet">
+  <div class="welcome"><div><div class="eyebrow">Your finances</div><h1>My Wallet</h1><div class="muted">Manage cash and reward points separately.</div></div></div>
+  <div class="grid stats">
+    <div class="card stat"><div class="label">Cash balance</div><strong id="walletCash">৳0.00</strong><div class="hint">BDT</div></div>
+    <div class="card stat"><div class="label">Points balance</div><strong id="walletPoints">0 PTS</strong><div class="hint">Points are not cash</div></div>
+    <div class="card stat"><div class="label">Pending requests</div><strong id="pendingCount">0</strong><div class="hint">Deposit / withdrawal</div></div>
+  </div>
+  <div class="grid two">
+    <div class="card"><h2>Deposit funds</h2><div class="notice">Demo only: no real payment is processed. Connect an approved payment gateway on the backend before accepting money.</div>
+      <div class="field"><label>Amount (BDT)</label><input id="depositAmount" type="number" min="100" placeholder="Minimum 100"></div>
+      <div class="field"><label>Payment method</label><select id="paymentMethod"><option>Approved payment gateway</option><option>Bank transfer</option></select></div>
+      <button class="btn gold" onclick="requestDeposit()">Continue to deposit</button>
+    </div>
+    <div class="card"><h2>Withdraw request</h2><div class="field"><label>Amount (BDT)</label><input id="withdrawAmount" type="number" min="100" placeholder="Minimum 100"></div>
+      <div class="field"><label>Payout method</label><select id="payoutMethod"><option>Bank account</option><option>Mobile financial service</option></select></div>
+      <div class="field"><label>Account details (masked where possible)</label><input id="payoutDetails" placeholder="Enter payout destination"></div>
+      <button class="btn" onclick="requestWithdraw()">Submit request</button>
+    </div>
+  </div>
+</section>
+<section class="page" id="page-packages">
+  <div class="welcome"><div><div class="eyebrow">Membership store</div><h1>Choose your package</h1><div class="muted">Transparent pricing and clearly defined benefits.</div></div></div>
+  <div class="notice">Package purchases are simulated in this prototype. Configure real products, tax, refunds and payment processing through the production backend.</div>
+  <div class="grid package-grid" id="packageList"></div>
+</section>
+<section class="page" id="page-levels">
+  <div class="welcome"><div><div class="eyebrow">Membership journey</div><h1>Five membership levels</h1><div class="muted">Your current level and available membership tiers.</div></div></div>
+  <div class="card"><div id="levelCards" class="grid package-grid"></div></div>
+</section>
+<section class="page" id="page-transactions">
+  <div class="welcome"><div><div class="eyebrow">Account records</div><h1>Transactions</h1><div class="muted">Review your recent account activity.</div></div></div>
+  <div class="card"><div class="table-wrap"><table><thead><tr><th>Reference</th><th>Type</th><th>Amount</th><th>Status</th><th>Date</th></tr></thead><tbody id="transactionRows"><tr><td colspan="5" class="empty">No transactions found.</td></tr></tbody></table></div></div>
+</section>
+<section class="page" id="page-profile">
+  <div class="welcome"><div><div class="eyebrow">Personal settings</div><h1>My Profile</h1><div class="muted">Your member account information.</div></div></div>
+  <div class="card" style="max-width:620px"><div class="field"><label>Full name</label><input id="profileName"></div><div class="field"><label>Email address</label><input id="profileEmail" disabled></div><button class="btn gold" onclick="saveProfile()">Save profile</button></div>
+</section>
+</main></div>
+<div class="footer">© <span id="year"></span> CROWN. Member portal prototype.</div>
+</div>
+<nav class="mobile-dock" aria-label="Main navigation">
+  <button onclick="showPage('dashboard')"><b>⌂</b>HOME</button>
+  <button onclick="showPage('startwork')"><b>♙</b>START WORK</button>
+  <button onclick="showPage('levels')"><b>♜</b>LEVEL</button>
+  <button onclick="showPage('profile')"><b>♙⚙</b>ACCOUNT</button>
+</nav>
+<div class="toast" id="toast"></div>
+<script>
+const packages=[
+ {name:"Starter",level:1,price:0,points:100,features:["Member dashboard","Basic account access","100 welcome points"]},
+ {name:"Bronze",level:2,price:990,points:250,features:["Bronze membership","Member support","250 reward points"]},
+ {name:"Silver",level:3,price:2490,points:600,features:["Silver membership","Priority support","600 reward points"]},
+ {name:"Gold",level:4,price:4990,points:1400,features:["Gold membership","Premium support","1,400 reward points"]},
+ {name:"Platinum",level:5,price:9990,points:3000,features:["Platinum membership","Priority account support","3,000 reward points"]}
+];
+let state={user:null,cash:0,points:0,level:1,transactions:[],userId:null},isSignup=false;
+const money=n=>"৳"+Number(n||0).toLocaleString("en-BD",{minimumFractionDigits:2,maximumFractionDigits:2});
+function toast(s){let t=document.getElementById("toast");t.textContent=s;t.style.display="block";setTimeout(()=>t.style.display="none",2800)}
+function toggleAuth(e){e.preventDefault();isSignup=!isSignup;document.getElementById("authTitle").textContent=isSignup?"Create your account":"Sign in to your account";document.getElementById("authSub").textContent=isSignup?"Join CROWN to get started.":"Access your membership dashboard.";document.getElementById("nameField").classList.toggle("hidden",!isSignup);document.getElementById("authSubmit").textContent=isSignup?"Create Account":"Sign In";document.getElementById("switchText").textContent=isSignup?"Already a member?":"New to CROWN?";document.getElementById("switchAuth").textContent=isSignup?"Sign in":"Create account"}
+function authenticate(){let email=document.getElementById("email").value.trim(),pass=document.getElementById("password").value,name=document.getElementById("fullName").value.trim();if(!email||!pass||pass.length<8){toast("Enter a valid email and password (8+ characters).");return}if(isSignup&&!name){toast("Please enter your full name.");return}state.user={email,name:name||email.split("@")[0]};state.userId="CR"+String(Math.floor(10000+Math.random()*89999));document.getElementById("authView").classList.add("hidden");document.getElementById("appView").classList.remove("hidden");render();toast("Demo session started.")}
+function logout(){state.user=null;document.getElementById("appView").classList.add("hidden");document.getElementById("authView").classList.remove("hidden");document.getElementById("password").value=""}
+function showPage(page,el){document.querySelectorAll(".page").forEach(x=>x.classList.remove("active"));document.getElementById("page-"+page).classList.add("active");document.querySelectorAll(".nav button[data-page]").forEach(x=>x.classList.toggle("active",x.dataset.page===page));window.scrollTo({top:0,behavior:"smooth"});}
+function startWorkDemo(){toast("Demo mode: connect a verified task system before starting real work.");}
+function addTx(type,amount,status){state.transactions.unshift({ref:"CP-"+Date.now().toString().slice(-8),type,amount,status,date:new Date().toLocaleDateString()});render()}
+function requestDeposit(){let n=Number(document.getElementById("depositAmount").value);if(!Number.isFinite(n)||n<100){toast("Minimum demo deposit is ৳100.");return}addTx("Deposit request",n,"Pending");document.getElementById("depositAmount").value="";toast("Demo deposit request recorded as pending.")}
+function requestWithdraw(){let n=Number(document.getElementById("withdrawAmount").value),dest=document.getElementById("payoutDetails").value.trim();if(!Number.isFinite(n)||n<100||n>state.cash){toast("Enter a valid amount within your available cash balance.");return}if(!dest){toast("Enter payout destination details.");return}state.cash-=n;addTx("Withdrawal request",-n,"Pending");document.getElementById("withdrawAmount").value="";document.getElementById("payoutDetails").value="";toast("Demo withdrawal request submitted.")}
+function buyPackage(level){let p=packages.find(x=>x.level===level);if(!p)return;if(level<=state.level){toast("You already have this level or higher.");return}if(p.price>state.cash){toast("Insufficient demo cash balance. Add funds in the wallet first.");return}if(!confirm("Buy "+p.name+" package for "+money(p.price)+"?"))return;state.cash-=p.price;state.points+=p.points;state.level=level;addTx("Package: "+p.name,-p.price,"Completed");toast("Demo package purchase completed.")}
+function saveProfile(){let n=document.getElementById("profileName").value.trim();if(!n){toast("Name cannot be empty.");return}state.user.name=n;render();toast("Profile updated in this demo session.")}
+function render(){if(!state.user)return;let name=state.user.name;document.getElementById("userLabel").textContent=name;document.getElementById("welcomeName").textContent=name;document.getElementById("cashBalance").textContent=money(state.cash);document.getElementById("workBalance").textContent=money(state.cash);document.getElementById("workRevenue").textContent=money(0);document.getElementById("workLevel").textContent=state.level===1?"FREE":packages[state.level-1].name.toUpperCase();document.getElementById("heroLevel").textContent=state.level===1?"FREE":packages[state.level-1].name.toUpperCase();document.getElementById("heroAccount").textContent=state.user.email;document.getElementById("heroUserId").textContent=state.userId||"—";document.getElementById("walletCash").textContent=money(state.cash);document.getElementById("pointsBalance").textContent=state.points+" PTS";document.getElementById("walletPoints").textContent=state.points+" PTS";document.getElementById("currentLevel").textContent="Level "+state.level;document.getElementById("levelPill").textContent="Level "+state.level+" / 5";document.getElementById("levelProgress").style.width=(state.level*20)+"%";document.getElementById("levelHint").textContent=state.level===5?"You have reached the highest membership tier.":"Next: "+packages[state.level].name+" membership.";document.getElementById("pendingCount").textContent=state.transactions.filter(t=>t.status==="Pending").length;document.getElementById("profileName").value=name;document.getElementById("profileEmail").value=state.user.email;
+document.getElementById("miniLevels").innerHTML=packages.map(p=>`<div class="level ${p.level===state.level?"current":""}"><b>${p.level}</b>${p.name}</div>`).join("");
+document.getElementById("packageList").innerHTML=packages.map(p=>`<div class="package ${p.level===state.level+1?"featured":""}"><span class="pill">LEVEL ${p.level}</span><h3>${p.name}</h3><div class="price">${p.price?money(p.price):"Free"}</div><ul>${p.features.map(f=>`<li>${f}</li>`).join("")}</ul><button class="btn ${p.level===state.level+1?"gold":""}" style="width:100%" ${p.level<=state.level?"disabled":""} onclick="buyPackage(${p.level})">${p.level===state.level?"Current plan":p.level<state.level?"Already passed":"Choose package"}</button></div>`).join("");
+document.getElementById("levelCards").innerHTML=packages.map(p=>`<div class="package"><span class="pill">LEVEL ${p.level}</span><h3>${p.name}</h3><div class="price">${p.price?money(p.price):"Free"}</div><p class="muted small">${p.features.join(" · ")}</p>${p.level===state.level?'<span class="status small">● Current level</span>':""}</div>`).join("");
+document.getElementById("transactionRows").innerHTML=state.transactions.length?state.transactions.map(t=>`<tr><td>${t.ref}</td><td>${t.type}</td><td>${money(t.amount)}</td><td class="${t.status==="Completed"?"status":""}">${t.status}</td><td>${t.date}</td></tr>`).join(""):'<tr><td colspan="5" class="empty">No transactions found.</td></tr>';
+document.getElementById("recentActivity").innerHTML=state.transactions.length?state.transactions.slice(0,3).map(t=>`<p class="small">${t.type} · ${money(t.amount)} <span class="muted">(${t.status})</span></p>`).join(""):'No activity yet. Your transactions will appear here.'}
+document.getElementById("year").textContent=new Date().getFullYear();
+</script>
+</body></html>
