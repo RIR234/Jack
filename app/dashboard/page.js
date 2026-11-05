@@ -1,20 +1,17 @@
 import { redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabase/server'
 
+export const dynamic = 'force-dynamic'
+
 export default async function DashboardPage() {
   const supabase = await createClient()
   const { data, error } = await supabase.auth.getClaims()
 
   if (error || !data?.claims) redirect('/login')
 
-  const { data: profile } = await supabase
-    .from('profiles')
-    .select('full_name')
-    .eq('id', data.claims.sub)
-    .maybeSingle()
-
   const email = typeof data.claims.email === 'string' ? data.claims.email : 'Member'
-  const name = profile?.full_name || (typeof data.claims.user_metadata?.full_name === 'string' ? data.claims.user_metadata.full_name : email)
+  const metadataName = data.claims.user_metadata?.full_name
+  const name = typeof metadataName === 'string' ? metadataName : email
 
   return (
     <main className="dashboard-shell">
